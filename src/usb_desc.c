@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    USB_Example/usb_desc.c
+  * @file    usb_desc.c
   * @author  MCD Application Team
   * @version V1.1.0
   * @date    20-September-2012
@@ -16,8 +16,8 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software
-  * distributed under the License is distributed on an "AS IS" BASIS,
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
@@ -29,14 +29,10 @@
 #include "usb_lib.h"
 #include "usb_desc.h"
 
-/** @addtogroup STM32F3_Discovery_Peripheral_Examples
+/** @addtogroup STM32F3-Discovery_Demo
   * @{
   */
-
-/** @addtogroup USB_Example
-  * @{
-  */
-
+  
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -245,13 +241,9 @@ uint8_t Joystick_StringSerial[JOYSTICK_SIZ_STRING_SERIAL] =
     USB_STRING_DESCRIPTOR_TYPE,        /* bDescriptorType */
     'S', 0, 'T', 0, 'M', 0, '3', 0, '2', 0, '1', 0, '0', 0
   };
-
+  
 /**
   * @}
   */
-
-/**
-  * @}
-  */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+  
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/ 

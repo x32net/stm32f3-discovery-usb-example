@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    USB_Example/usb_pwr.c
+  * @file    usb_pwr.c
   * @author  MCD Application Team
   * @version V1.1.0
   * @date    20-September-2012
@@ -16,8 +16,8 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software
-  * distributed under the License is distributed on an "AS IS" BASIS,
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
@@ -31,14 +31,10 @@
 #include "usb_pwr.h"
 #include "hw_config.h"
 
-/** @addtogroup STM32F3_Discovery_Peripheral_Examples
+/** @addtogroup STM32F3-Discovery_Demo
   * @{
   */
-
-/** @addtogroup USB_Example
-  * @{
-  */
-
+  
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -52,6 +48,7 @@ struct
   __IO uint8_t bESOFcnt;
 }
 ResumeS;
+
 /* Extern variables ----------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
 /* Extern function prototypes ------------------------------------------------*/
@@ -60,7 +57,7 @@ ResumeS;
 /**
   * @brief  PowerOn
   * @param  None.
-  * @retval USB_SUCCESS.
+  * @retval USB_SUCCESS. 
   */
 RESULT PowerOn(void)
 {
@@ -88,7 +85,7 @@ RESULT PowerOn(void)
 /**
   * @brief  handles switch-off conditions
   * @param  None.
-  * @retval USB_SUCCESS.
+  * @retval USB_SUCCESS. 
   */
 RESULT PowerOff()
 {
@@ -109,7 +106,7 @@ RESULT PowerOff()
 /**
   * @brief  Sets suspend mode operating conditions
   * @param  None.
-  * @retval USB_SUCCESS.
+  * @retval USB_SUCCESS. 
   */
 void Suspend(void)
 {
@@ -141,7 +138,7 @@ void Suspend(void)
 /**
   * @brief  Handles wake-up restoring normal operations
   * @param  None.
-  * @retval USB_SUCCESS.
+  * @retval USB_SUCCESS. 
   */
 void Resume_Init(void)
 {
@@ -155,8 +152,8 @@ void Resume_Init(void)
   wCNTR = _GetCNTR();
   wCNTR &= (~CNTR_LPMODE);
   _SetCNTR(wCNTR);
-
-
+    
+  
   /* restore full power */
   /* ... on connected devices */
   Leave_LowPowerMode();
@@ -165,18 +162,18 @@ void Resume_Init(void)
   _SetCNTR(IMR_MSK);
 
   /* reverse suspend preparation */
-  /* ... */
+  /* ... */ 
 
 }
 
 /**
   * @brief  This is the state machine handling resume operations and timing sequence.
-  *         The control is based on the Resume structure variables and on the ESOF
+  *         The control is based on the Resume structure variables and on the ESOF 
   *         interrupt calling this subroutine without changing machine state.
-  * @param  eResumeSetVal: a state machine value (RESUME_STATE) RESUME_ESOF doesn't
-  *                        change ResumeS.eState allowing decrementing of the ESOF
+  * @param  eResumeSetVal: a state machine value (RESUME_STATE) RESUME_ESOF doesn't 
+  *                        change ResumeS.eState allowing decrementing of the ESOF 
   *                        counter in different states.
-  * @retval None.
+  * @retval None. 
   */
 void Resume(RESUME_STATE eResumeSetVal)
 {
@@ -232,10 +229,6 @@ void Resume(RESUME_STATE eResumeSetVal)
 
 /**
   * @}
-  */
-
-/**
-  * @}
-  */
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
